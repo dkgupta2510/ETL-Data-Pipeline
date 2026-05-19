@@ -1,46 +1,23 @@
 #1
 
 
-SELECT language,COUNT(*) AS total_calls,
-SUM(CASE WHEN call_outcome='connected' THEN 1 ELSE 0 END) AS connected_calls,
-ROUND(100.0*SUM(CASE WHEN call_outcome='connected' THEN 1 ELSE 0 END)/COUNT(*),2) AS connect_rate_percent
-FROM calls
-GROUP BY language;
+SELECT language,COUNT(*) AS total_calls,SUM(CASE WHEN call_outcome='connected' THEN 1 ELSE 0 END) AS connected_calls,ROUND(100.0*SUM(CASE WHEN call_outcome='connected' THEN 1 ELSE 0 END)/COUNT(*),2) AS connect_rate_percent FROM calls GROUP BY language;
 
 #2
 
-SELECT call_hour,COUNT(*) AS callback_count
-FROM calls
-WHERE call_outcome='callback_requested'
-GROUP BY call_hour
-ORDER BY callback_count DESC
-LIMIT 1;
-
+SELECT call_hour,COUNT(*) AS callback_count FROM calls WHERE call_outcome='callback_requested' GROUP BY call_hour ORDER BY callback_count DESC LIMIT 1;
 
 
 #3
 
-SELECT COUNT(*) AS long_calls,
-ROUND(100.0*COUNT(*)/(SELECT COUNT(*) FROM calls),2) AS long_call_percentage,
-ROUND(AVG(amount_promised),2) AS avg_amount_promised
-FROM calls
-WHERE duration_bucket='long';
-
+SELECT COUNT(*) AS long_calls,ROUND(100.0*COUNT(*)/(SELECT COUNT(*) FROM calls),2) AS long_call_percentage,ROUND(AVG(amount_promised),2) AS avg_amount_promised FROM calls WHERE duration_bucket='long';
 
 
 #4 
 
-SELECT agent_id,COUNT(*) AS total_calls
-FROM calls
-GROUP BY agent_id
-ORDER BY total_calls DESC
-LIMIT 3;
+SELECT agent_id,COUNT(*) AS total_calls FROM calls GROUP BY agent_id ORDER BY total_calls DESC LIMIT 3;
 
 
 #5
 
-
-SELECT call_date,COUNT(*) AS total_calls
-FROM calls
-GROUP BY call_date
-ORDER BY call_date;
+SELECT call_date,COUNT(*) AS total_calls FROM calls GROUP BY call_date ORDER BY call_date;
