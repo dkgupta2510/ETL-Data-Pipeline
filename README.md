@@ -50,6 +50,6 @@ python queries.py
 ```
 
 ## What I’d do differently at scale
-Replace JSON files with a columnar format like Parquet or a streaming source, because JSON does not scale well for large volumes.
-Use a production-grade data warehouse or OLAP store instead of SQLite: PostgreSQL, Snowflake, BigQuery, or Redshift.
-Avoid dropping and recreating tables on each load; use proper staging, merge/upsert logic, and partitioned storage.
+-Replace JSON files with a columnar format like Parquet or a streaming source, because JSON does not scale well for large volumes.
+-Use a production-grade data warehouse or OLAP store instead of SQLite: PostgreSQL, Snowflake, BigQuery, or Redshift.
+-Avoid dropping and recreating tables on each load; use proper staging, merge/upsert logic, and partitioned storage.
