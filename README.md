@@ -48,6 +48,7 @@ python deduplicate.py
 python sqlload.py
 python queries.py
 ```
+<img width="1327" height="670" alt="image" src="https://github.com/user-attachments/assets/0970499a-adde-4f9d-be7a-0c02bbf5f3b7" />
 
 ## What I’d do differently at scale
 -Replace JSON files with a columnar format like Parquet or a streaming source, because JSON does not scale well for large volumes.
