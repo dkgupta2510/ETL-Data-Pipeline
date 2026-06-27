@@ -49,6 +49,10 @@ python sqlload.py
 python queries.py
 ```
 <img width="1327" height="670" alt="image" src="https://github.com/user-attachments/assets/0970499a-adde-4f9d-be7a-0c02bbf5f3b7" />
+<img width="1376" height="552" alt="image" src="https://github.com/user-attachments/assets/726e8faa-7a48-4847-aa8d-4b0447f2bdbe" />
+<img width="1366" height="650" alt="image" src="https://github.com/user-attachments/assets/6a54cc1f-4973-42f0-92c8-453b155ce417" />
+<img width="353" height="332" alt="image" src="https://github.com/user-attachments/assets/f1339f8a-44bd-4da9-b5dd-d8a56f36b44a" />
+
 
 ## What I’d do differently at scale
 -Replace JSON files with a columnar format like Parquet or a streaming source, because JSON does not scale well for large volumes.
